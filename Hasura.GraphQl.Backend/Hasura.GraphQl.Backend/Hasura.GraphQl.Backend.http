@@ -1,0 +1,6 @@
+@Hasura.GraphQl.Backend_HostAddress = http://localhost:5125
+
+GET {{Hasura.GraphQl.Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
