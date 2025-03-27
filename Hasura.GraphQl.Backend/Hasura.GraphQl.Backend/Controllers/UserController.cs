@@ -21,7 +21,7 @@ namespace Hasura.GraphQl.Backend.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetUser(int id)
         {
-            var user = await _hasuraService.GetUserById(id);
+            var user = await _hasuraService.GetUserByIdAsync(id);
             if (user == null) return NotFound();
             return Ok(user);
         }
@@ -29,7 +29,7 @@ namespace Hasura.GraphQl.Backend.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Users>>> GetAllUsers()
         {
-            var user = await _hasuraService.GetAllUsers();
+            var user = await _hasuraService.GetAllUsersAsync();
             if (user == null) return NotFound();
             return Ok(user);
         }

@@ -2,9 +2,6 @@
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
 using Hasura.GraphQl.Backend.Dtos;
-using Microsoft.Extensions.Configuration;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
 
 
 
@@ -25,7 +22,7 @@ namespace Hasura.GraphQl.Backend.services
             _client.HttpClient.DefaultRequestHeaders.Add("x-hasura-admin-secret", adminSecret);
         }
 
-        public async Task<Users> GetUserById(int id)
+        public async Task<Users> GetUserByIdAsync(int id)
         {
             var query = new GraphQLRequest
             {
@@ -56,7 +53,7 @@ namespace Hasura.GraphQl.Backend.services
         }
 
 
-        public async Task<List<Users>> GetAllUsers()
+        public async Task<List<Users>> GetAllUsersAsync()
         {
             var query = new GraphQLRequest
             {
